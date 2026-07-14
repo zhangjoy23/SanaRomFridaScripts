@@ -1,13 +1,4 @@
-'use strict';
-
-setImmediate(function () {
-  console.log('[SanaRom] example-app-info.js loaded');
-
-  if (!Java.available) {
-    console.log('[SanaRom] Java runtime is not available');
-    return;
-  }
-
+function hook(){
   Java.perform(function () {
     try {
       var ActivityThread = Java.use('android.app.ActivityThread');
@@ -29,4 +20,5 @@ setImmediate(function () {
       console.log('[SanaRom] example failed: ' + error);
     }
   });
-});
+}
+hook();
